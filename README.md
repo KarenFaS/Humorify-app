@@ -2,8 +2,9 @@
 </div>
 
 <div style="text-align:center">
-    <img src="C:\\Users\\mingo\\Downloads\\HUMORIFY\\Humorify.png.png" alt="Logo" width="250"/>
+    <img src="https://github.com/cmingoi/Taller-Humorify/blob/main/imagen.png"/>
 </div>
+
 
 Proyecto de Aplicación Web para Generación Automática de Posts
 Este proyecto se enmarca dentro del módulo de productivización del bootcamp de data science y tiene como objetivo 
