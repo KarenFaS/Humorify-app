@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humorify - Pregunta y Ríe</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffeb3b;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff4081;
+        }
+        .input-group {
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 2px solid #ff4081;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #e91e63;
+        }
+        .response {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff5722;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Humorify</h1>
+        <p>¡Haz una pregunta y recibe una respuesta graciosa!</p>
+        <div class="input-group">
+            <input type="text" id="question" placeholder="Escribe tu pregunta aquí...">
+        </div>
+        <button onclick="getGptResponse()">Preguntar</button>
+        <div class="response" id="response"></div>
+    </div>
+
+    <script>
+        async function getGptResponse() {
+            const question = document.getElementById('question').value;
+            const location = 'Desconocida'; // Puedes mejorar esto para obtener la ubicación real del usuario
+
+            const response = await fetch('/ask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ question, location }),
+            });
+
+            const data = await response.json();
+            document.getElementById('response').innerText = data.response;
+        }
+    </script>
+</body>
+</html>
