@@ -68,13 +68,16 @@ Sigue las instrucciones en la documentación para desplegar la base de datos en 
 # Estructura del Proyecto
 plaintext
 Copiar código
-├── app.py
+```
+├── app.py,
 ├── Dockerfile
 ├── requirements.txt
 ├── README.md
 ├── .env
 └── templates
-    └── index.html
+   └── index.html
+```
+
 Documentación del Proceso de Desarrollo y Despliegue
 Se adjunta la documentación detallada del proceso de desarrollo y despliegue de la aplicación en el repositorio, donde se explican los siguientes aspectos:
 
