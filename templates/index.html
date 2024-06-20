@@ -26,12 +26,16 @@
         .input-group {
             margin: 20px 0;
         }
-        input[type="text"] {
+        textarea {
             width: calc(100% - 20px);
-            padding: 10px;
+            padding: 5px; /* Espacio interno */
             border: 2px solid #ff4081;
             border-radius: 5px;
             font-size: 16px;
+            resize: none; /* Evita que el usuario redimensione manualmente */
+            overflow: hidden; /* Oculta el scroll */
+            line-height: 1;
+            min-height: 20px; /* Altura mínima para una línea de texto */
         }
         button {
             background-color: #ff4081;
@@ -59,7 +63,7 @@
         <h1>Humorify</h1>
         <p>¡Haz una pregunta y recibe una respuesta graciosa!</p>
         <div class="input-group">
-            <input type="text" id="question" placeholder="Escribe tu pregunta aquí...">
+            <textarea id="question" placeholder="Escribe tu pregunta aquí..." rows="1" oninput="adjustTextarea(this)"></textarea>
         </div>
         <button onclick="getGptResponse()">Preguntar</button>
         <div class="response" id="response"></div>
@@ -80,6 +84,11 @@
 
             const data = await response.json();
             document.getElementById('response').innerText = data.response;
+        }
+
+        function adjustTextarea(el) {
+            el.style.height = 'auto';
+            el.style.height = (el.scrollHeight) + 'px';
         }
     </script>
 </body>
