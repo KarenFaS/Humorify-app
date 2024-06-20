@@ -28,7 +28,7 @@ def get_gpt_response(prompt):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "Dame una respuesta corta y con poco graciosa a la pregunta"},
+            {"role": "system", "content": "Dame una respuesta graciosa a la pregunta"},
             {"role": "user", "content": prompt}
         ],
         max_tokens=200
