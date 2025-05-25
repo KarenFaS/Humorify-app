@@ -8,7 +8,7 @@
 
 # Proyecto de Aplicación Web para Generación Automática de Posts
 
-Este proyecto se enmarca dentro del módulo de productivización del bootcamp de data science y tiene como objetivo la creación de una aplicación web en Python que genere posts automáticos con humor basados en un modelo preentrenado, en este caso ChatGPT.
+Este proyecto se enmarca dentro del módulo de productivización y tiene como objetivo la creación de una aplicación web en Python que genere posts automáticos con humor basados en un modelo preentrenado, en este caso ChatGPT.
 
 ## Objetivos
 
